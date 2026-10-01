@@ -246,7 +246,7 @@
 }
 ];
   // Logos de partido recortados do próprio modelo da campanha. Partidos sem logo aqui mostram a sigla escrita.
-  const LOGOS = {"PT": "img/logos/PT.png", "PSD": "img/logos/PSD.png", "PCDOB": "img/logos/PCDOB.png", "PSOL": "img/logos/PSOL.png", "PRD": "img/logos/PRD.png"};
+  const LOGOS = {"PT": "img/logos/PT.png", "PSD": "img/logos/PSD.png", "AVANTE": "img/logos/AVANTE.png", "PV": "img/logos/PV.png", "SOLIDARIEDADE": "img/logos/SOLIDARIEDADE.png", "PL": "img/logos/PL.png", "PCDOB": "img/logos/PCDOB.png", "PP": "img/logos/PP.png", "PDT": "img/logos/PDT.png", "PSOL": "img/logos/PSOL.png", "REPUBLICANOS": "img/logos/REPUBLICANOS.png", "UNIÃO BRASIL": "img/logos/UNIAO-BRASIL.png", "MDB": "img/logos/MDB.png", "PODE": "img/logos/PODE.png", "PSDB": "img/logos/PSDB.png", "PRD": "img/logos/PRD.png", "PSB": "img/logos/PSB.png"};
   const logoImg = {};
   for (const [p, src] of Object.entries(LOGOS)){ const im = new Image(); im.onload = () => { logoImg[p] = im; desenhar(); }; im.src = src; }
   const PADRAO = Math.max(0, FEDERAIS.findIndex(f => f.linha === 0));
@@ -289,10 +289,10 @@
 
   // Fundo atrás da foto nas cores do partido (raios de sol, no estilo das outras fotos do modelo)
   const CORES = {
-    'PT':['#ffd21f','#e30613'], 'PCDOB':['#ffd21f','#c8102e'], 'PSOL':['#ffd21f','#8e1b7e'], 'PSB':['#ffd21f','#e5281c'],
+    'PT':['#ffd21f','#e30613'], 'PCDOB':['#ffd21f','#c8102e'], 'PSOL':['#7a1fa0','#ffd21f'], 'PSB':['#ffd21f','#e5281c'],
     'PDT':['#1c3f94','#e30613'], 'PV':['#2e9e3f','#ffd21f'], 'PSD':['#0b3d91','#ffc20e'], 'PSDB':['#1d4f9c','#ffd21f'],
     'PP':['#1b5aa8','#65c6f0'], 'PL':['#123f8c','#ffd21f'], 'UNIÃO BRASIL':['#1e2a78','#00a3e0'], 'REPUBLICANOS':['#1e5aa8','#7fc241'],
-    'AVANTE':['#1a9a4b','#ffcc00'], 'SOLIDARIEDADE':['#f28c28','#1d4f9c'], 'MDB':['#1f8a3d','#ffd21f'], 'PODE':['#2b9e4c','#1c3f94'],
+    'AVANTE':['#f26419','#3fb0b4'], 'SOLIDARIEDADE':['#f28c28','#1d4f9c'], 'MDB':['#1f8a3d','#ffd21f'], 'PODE':['#2b9e4c','#1c3f94'],
     'PRD':['#0a2d6e','#ffd21f'],
   };
   function fundoFoto(x, y, w, h, partido){
@@ -310,9 +310,9 @@
 
   // Cor de destaque da linha (bloco do número, faixa do cargo, caixa e número) conforme o partido
   const COR_LINHA = {
-    'PT':'#e30613', 'PCDOB':'#c8102e', 'PSOL':'#d4001e', 'PSB':'#e5281c', 'PDT':'#1c3f94', 'PV':'#1f8a3d',
+    'PT':'#e30613', 'PCDOB':'#c8102e', 'PSOL':'#6b0f8c', 'PSB':'#e5281c', 'PDT':'#1c3f94', 'PV':'#1f8a3d',
     'PSD':'#1417ba', 'PSDB':'#1d4f9c', 'PP':'#1b5aa8', 'PL':'#123f8c', 'UNIÃO BRASIL':'#1e2a78', 'REPUBLICANOS':'#1e5aa8',
-    'AVANTE':'#1a8a44', 'SOLIDARIEDADE':'#e2711d', 'MDB':'#1f8a3d', 'PODE':'#23884a', 'PRD':'#0a2d6e',
+    'AVANTE':'#e8590c', 'SOLIDARIEDADE':'#e2711d', 'MDB':'#1f8a3d', 'PODE':'#23884a', 'PRD':'#0a2d6e',
   };
   const corDaLinha = p => COR_LINHA[(p || '').toUpperCase()] || '#e30613';
   const linhasCor = {};
