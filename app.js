@@ -420,6 +420,7 @@
     // cada cargo escolhido vem da colinha preenchida; o resto fica vazio
     const fed = est.federal >= 0 ? FEDERAIS[est.federal] : null;
     if (fed){ copiarLinha(0); if (fed.linha !== 0) linhaPersonalizada(0, fed, corDaLinha(fed.partido)); }
+    copiarLinha(1);   // André: a foto do PDF colorido (232px) é melhor que a do PDF vazio (120px)
     if (est.benedita) copiarLinha(2);
     if (est.pedro) copiarLinha(3);
     if (est.paes) copiarLinha(4);
