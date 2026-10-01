@@ -270,7 +270,8 @@
 
   function copiarLinha(i){
     const y0 = LINHA_Y(i);
-    ctx.drawImage(modelo, R.linha.x, y0, R.linha.w, R.linha.h, R.linha.x, y0, R.linha.w, R.linha.h);
+    const k = modelo.naturalWidth / W;   // modelo em alta (2x)
+    ctx.drawImage(modelo, R.linha.x*k, y0*k, R.linha.w*k, R.linha.h*k, R.linha.x, y0, R.linha.w, R.linha.h);
   }
 
   function ajustarFonte(txt, maxW, tam){
@@ -331,7 +332,8 @@
   function prepararLinhaLimpa(){
     const y0 = LINHA_Y(0), c = document.createElement('canvas'); c.width = W*S; c.height = R.linha.h*S;
     const g = c.getContext('2d'); g.scale(S, S); g.imageSmoothingQuality = 'high';
-    g.drawImage(modelo, R.linha.x, y0, R.linha.w, R.linha.h, R.linha.x, 0, R.linha.w, R.linha.h);
+    const k = modelo.naturalWidth / W;
+    g.drawImage(modelo, R.linha.x*k, y0*k, R.linha.w*k, R.linha.h*k, R.linha.x, 0, R.linha.w, R.linha.h);
     g.fillStyle = '#ffffff'; g.fillRect(421, 74, 266, 118);
     const bx = 684, by = 74, bw = 260, bh = 122;
     const t = document.createElement('canvas'); t.width = bw*S; t.height = bh*S;
