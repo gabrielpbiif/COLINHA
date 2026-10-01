@@ -91,6 +91,13 @@
 "foto": "img/fotos/7015.webp"
 },
 {
+"nome": "Fabiano Horta",
+"urna": "FABIANO HORTA",
+"numero": "1303",
+"partido": "PT",
+"foto": "img/fotos/1303.webp"
+},
+{
 "nome": "Laura Carneiro",
 "urna": "LAURA CARNEIRO",
 "numero": "5566",
